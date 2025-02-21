@@ -46,7 +46,7 @@ export const fetchMovieSearch = async (query, page = 1) => {
     return axios
         .get(url, options)
         .then(response => {
-            response.data.results
+        return response.data;
         })
         .catch(err => {
             console.error(err);
@@ -68,7 +68,7 @@ export const fetchMovieDetails = async (movieId) => {
     return axios
         .get(url, options)
         .then(response => {
-            response.data.results
+        return response.data;
         })
         .catch(err => {
             console.error(err);
@@ -90,7 +90,7 @@ export const fetchMovieCredits = async (movieId) => {
     return axios
         .get(url, options)
         .then(response => {
-            response.data.results
+        return response.data;
         })
         .catch(err => {
             console.error(err);
@@ -113,7 +113,7 @@ export const fetchMovieReviews = async (movieId) => {
     return axios
         .get(url, options)
         .then(response => {
-            response.data.results
+        return response.data;
         })
         .catch(err => {
             console.error(err);
