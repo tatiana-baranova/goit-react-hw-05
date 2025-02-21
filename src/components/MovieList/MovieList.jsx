@@ -1,23 +1,9 @@
 import { Link, useLocation } from 'react-router-dom';
 import s from './MovieList.module.css'
-import { ClimbingBoxLoader } from "react-spinners";
 
-const MovieList = ({ movies, isLoading }) => {
+const MovieList = ({ movies}) => {
     const location = useLocation();
 
-    if (isLoading) {
-        return (
-            <div className={s.wrap}>
-                <ClimbingBoxLoader
-                    className={s.loader}
-                    color="#de4f4f"
-                    loading={isLoading} 
-                    size={18}
-                    speedMultiplier={1.5}
-                />
-            </div>
-        );
-    }
     return (
         <>
             {movies && movies.length > 0 ? (
@@ -32,7 +18,7 @@ const MovieList = ({ movies, isLoading }) => {
                             <li key={id} className={s.item}>
                                 <Link className={s.link} to={`/movies/${id}`} state={{ from: location }}>
                                     <img src={urlImage} alt={title} className={s.img}/>
-                                    <p>{title}</p>
+                                    <p className={s.titleImg}>{title}</p>
                                 </Link>
                             </li>
                         );
