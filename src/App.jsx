@@ -3,6 +3,7 @@ import './App.css'
 import Navigation from './components/Navigation/Navigation'
 // import NotFoundPage from './pages/NotFoundPage/NotFoundPage'
 import { lazy, Suspense } from 'react'
+import HomePage from './pages/HomePage/HomePage';
 
 const NotFoundPage = lazy(() => import('./pages/NotFoundPage/NotFoundPage'));
 
@@ -15,7 +16,7 @@ function App() {
         <Navigation />
         <Suspense>
           <Routes>
-          <Route/>
+          <Route path="/" element={<HomePage />} />
           <Route/>
           <Route/>
           <Route path='*' element={<NotFoundPage />} />

@@ -1,0 +1,17 @@
+.wrap {
+    margin: 0 auto;
+}
+
+.listMovies {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 26px;
+}
+
+.img {
+    max-width: 300px;
+}

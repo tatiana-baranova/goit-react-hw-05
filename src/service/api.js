@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios from 'axios';
 
 const TOKEN = 'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI2YTkxYzZmOWY4MDNkNTRjZjFjMGY0OTNjZmI0YTFmNSIsIm5iZiI6MTc0MDA3MjM4My4wODYwMDAyLCJzdWIiOiI2N2I3NjViZjQ0NGRkN2ZjZWZiYTExMGEiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.yqPXzI2hDNp6xqFhzyaLfizzk6_WZ_ZG6G2pyIC6Ltw';
 
@@ -13,16 +13,22 @@ export const searchMovieTrending = async () => {
             accept: 'application/json',
     },
 };
-    console.log(searchMovieTrending);
-    
-    return axios
-        .get(url, options)
-        .then(response => {
-            response.data.results
-        })
-        .catch(err => {
-            console.error(err);
-    });
+    // console.log(searchMovieTrending);
+    try {
+        const response = await axios.get(url, options);  // Використовуємо await для axios
+        return response.data.results;  // Повертаємо результати
+    } catch (err) {
+        console.error(err);
+        return [];  // Якщо сталася помилка, повертаємо порожній масив
+    }
+    // return axios
+    //     .get(url, options)
+    //     .then(response => {
+    //         response.data.results
+    //     })
+    //     .catch(err => {
+    //         console.error(err);
+    // });
 };
 
 export const fetchMovieSearch = async (query, page = 1) => {
