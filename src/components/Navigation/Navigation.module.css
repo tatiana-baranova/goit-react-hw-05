@@ -1,0 +1,30 @@
+.header {
+    background-color: #7b130dea;
+    height: 80px;
+    padding: 0 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 15px;
+    color: white;
+
+}
+
+.link {
+    color: white;
+    font-size: 22px;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.active {
+    color: rgb(217, 131, 131);
+}
