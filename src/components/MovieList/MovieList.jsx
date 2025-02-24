@@ -8,15 +8,16 @@ const MovieList = ({ movies}) => {
         <>
             {movies && movies.length > 0 ? (
                 <ul className={s.listMovies}>
-                    {movies.map(({ id, title, poster_path }) => {
+                    {movies.map(({ id, title, poster_path, index }) => {
                         {poster_path ? `https://image.tmdb.org/t/p/w200${poster_path}` : "https://via.placeholder.com/200x300"}
+                        const movieId = id ?? `temp-${index}`;
                         const urlImage = poster_path
                             ? `https://image.tmdb.org/t/p/w500/${poster_path}`
-                            : 'https://via.placeholder.com/350x500?text=No+Image';
+                            : 'https://www.movienewz.com/img/films/poster-holder.jpg';
 
                         return (
-                            <li key={id} className={s.item}>
-                                <Link className={s.link} to={`/movies/${id}`} state={{ from: location }}>
+                            <li key={`${id}-${index}`} className={s.item}>
+                                <Link className={s.link} to={`/movies/${movieId}`} state={{ from: location }}>
                                     <img src={urlImage} alt={title} className={s.img}/>
                                     <p className={s.titleImg}>{title}</p>
                                 </Link>

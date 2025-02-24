@@ -14,7 +14,7 @@ const SearchBar = ({ setQuery }) => {
     };
 
     return (
-        <div>
+        <div className={s.wrap}>
             <form className={s.form} onSubmit={handleSubmit}>
                 <input
                     type="text"
