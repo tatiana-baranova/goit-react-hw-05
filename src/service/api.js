@@ -13,22 +13,14 @@ export const searchMovieTrending = async () => {
             accept: 'application/json',
     },
 };
-    // console.log(searchMovieTrending);
     try {
-        const response = await axios.get(url, options);  // Використовуємо await для axios
-        return response.data.results;  // Повертаємо результати
+        const response = await axios.get(url, options); 
+        return response.data.results; 
     } catch (err) {
         console.error(err);
-        return [];  // Якщо сталася помилка, повертаємо порожній масив
+        return []; 
     }
-    // return axios
-    //     .get(url, options)
-    //     .then(response => {
-    //         response.data.results
-    //     })
-    //     .catch(err => {
-    //         console.error(err);
-    // });
+
 };
 
 export const fetchMovieSearch = async (query, page = 1) => {
@@ -54,7 +46,7 @@ export const fetchMovieSearch = async (query, page = 1) => {
 };
 
 export const fetchMovieDetails = async (movieId) => {
-    const url = `https://api.themoviedb.org/3/movie/movie_id=${movieId}`;
+    const url = `https://api.themoviedb.org/3/movie/${movieId}`;
 
         // `https://api.themoviedb.org/3/movie/movie_id=${movieId}?language=en-US`;
 
@@ -65,14 +57,19 @@ export const fetchMovieDetails = async (movieId) => {
         },
     };
 
-    return axios
-        .get(url, options)
-        .then(response => {
+    try {
+        const response = await axios.get(url, options); 
+        console.log("API Response:", response.data);
+        
         return response.data;
-        })
-        .catch(err => {
-            console.error(err);
-        });
+    } catch (err) {
+        if (err.response && err.response.status === 404) {
+            console.error("Movie not found:", err.response.data.status_message);
+        } else {
+            console.error("API Fetch Error:", err.message);
+        }
+        return null;
+    }
 }
 
 export const fetchMovieCredits = async (movieId) => {

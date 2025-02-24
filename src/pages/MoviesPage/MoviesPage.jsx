@@ -18,10 +18,10 @@ const MoviesPage = () => {
     useEffect(() => {
         const getData = async () => {
             try {
-                setIsLoading(true);
                 const data = await fetchMovieSearch(query, page);
-                console.log("Fetched data:", data);
+                // console.log("Fetched data:", data);
                 const searchMovie = data.results;
+                setIsLoading(true);
                 setMovie(prev => [...prev, ...searchMovie]);
                 const totalPageData = data.total_pages;
                 setTotalPages(totalPageData);

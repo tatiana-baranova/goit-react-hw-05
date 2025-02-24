@@ -1,0 +1,62 @@
+.container {
+    margin-top: 40px;
+}
+
+.infoMovie {
+    padding: 8px;
+    display: flex;
+    max-width: 500px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+@media screen and (max-width: 678px) {
+    .wrapper {
+        flex-wrap: wrap;
+
+    }
+}
+
+.img {
+    max-width: 350px;
+    max-height: 450px;
+}
+
+.textWrap {
+    display: flex;
+    gap: 10px;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.wrapper {
+    padding: 8px;
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.navMovie {
+    margin-top: 20px;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.link {
+    color: white;
+    font-size: 24px;
+}
+
+.active {
+    color: rgb(217, 131, 131);
+}
+
+.score {
+    font-size: 18px;
+    font-weight: 600;
+}

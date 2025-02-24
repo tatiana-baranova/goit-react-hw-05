@@ -3,6 +3,7 @@ import { searchMovieTrending } from './../../service/api'
 import s from './HomePage.module.css'
 import MovieList from '../../components/MovieList/MovieList';
 import Loader from '../../components/Loader/Loader';
+// import ErrorMessage from '../../components/ErrorMessage/ErrorMessage';
 
 const HomePage = () => {
     const [movies, setMovies] = useState([]);
@@ -11,6 +12,7 @@ const HomePage = () => {
 
     useEffect(() => {
         setIsLoading(true);
+        // setIsError(false);
         searchMovieTrending().then(data => setMovies(data))
             .finally(() => setIsLoading(false));
     }, []);
@@ -19,7 +21,8 @@ const HomePage = () => {
         <div>
             {isLoading && <Loader/>}
             <h1 className={s.title}>Trending Movies</h1>
-            <MovieList movies={movies} isLoading={isLoading}/>
+            <MovieList movies={movies} isLoading={isLoading} />
+            {/* {isError && <ErrorMessage />} */}
         </div>
     )
 };
