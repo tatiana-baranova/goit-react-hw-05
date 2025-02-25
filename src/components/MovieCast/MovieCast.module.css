@@ -21,8 +21,8 @@
 
 .list {
     display: flex;
-    max-width: 250px;
-    max-height: 360px;
+    width: 380px;
+    height: 380px;
     flex-direction: column;
     flex-wrap: wrap;
     align-content: center;
