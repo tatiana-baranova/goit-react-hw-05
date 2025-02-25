@@ -1,5 +1,5 @@
 .container {
-    margin-top: 40px;
+    margin-top: 50px;
 }
 
 .infoMovie {
@@ -8,7 +8,7 @@
     max-width: 500px;
     flex-direction: row;
     flex-wrap: wrap;
-    align-content: center;
+    align-content: space-around;
     justify-content: center;
     align-items: center;
     gap: 10px;
@@ -19,6 +19,10 @@
         flex-wrap: wrap;
 
     }
+}
+
+.title {
+    margin-bottom: 5px;
 }
 
 .img {
@@ -36,8 +40,9 @@
 .wrapper {
     padding: 8px;
     display: flex;
-    gap: 10px;
-    margin-top: 10px;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
 }
 
 .navMovie {
@@ -59,4 +64,9 @@
 .score {
     font-size: 18px;
     font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    margin-bottom: 10px;
 }

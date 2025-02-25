@@ -59,7 +59,7 @@ export const fetchMovieDetails = async (movieId) => {
 
     try {
         const response = await axios.get(url, options); 
-        console.log("API Response:", response.data);
+        // console.log("API Response:", response.data);
         
         return response.data;
     } catch (err) {
@@ -73,7 +73,7 @@ export const fetchMovieDetails = async (movieId) => {
 }
 
 export const fetchMovieCredits = async (movieId) => {
-    const url = `https://api.themoviedb.org/3/movie/movie_id=${movieId}/credits`;
+    const url = `https://api.themoviedb.org/3/movie/${movieId}/credits`;
         
         // `https://api.themoviedb.org/3/movie/movie_id=${movieId}/credits?language=en-US`;
 
