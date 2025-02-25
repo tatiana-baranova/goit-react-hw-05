@@ -52,10 +52,10 @@ const MovieDetailsPage = () => {
                     <div>
                         <h2 className={s.title}>{movie.title}</h2>
                         <p className={s.score}>Score: {Math.round(movie.vote_average * 10)}%</p>
+                        <p className={s.release}>Release date: {movie.release_date}</p>
                         <h3 className={s.subtitle}>Runtime: {movie.runtime} minutes</h3> 
                         <p className={s.overviews}>Overviews: {movie.overview}</p>
-                        <p className={s.release}>Release date: {movie.release_date.slice(0, 2)}</p>
-                        <p>Rating: {movie.vote_average}</p>
+                        {/* <p>Rating: {movie.vote_average}</p> */}
                     </div>
                     <div className={s.textWrap}>
                     <h3 className={s.subtitle}>Genres:</h3>
