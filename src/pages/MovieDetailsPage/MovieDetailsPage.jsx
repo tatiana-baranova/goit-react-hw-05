@@ -42,8 +42,8 @@ const MovieDetailsPage = () => {
         <>
             <div className={s.container}>
                 <GoBackBtn />
-                {isError && <ErrorMessage />}
                 {isLoading && <Loader/>}
+                {isError && <ErrorMessage />}
                 <div className={s.wrapper}>
                 <div className={s.wrap}>
                         <img src={urlImage} alt={movie.title} className={s.img}/>

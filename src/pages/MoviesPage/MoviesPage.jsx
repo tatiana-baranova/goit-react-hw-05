@@ -40,13 +40,9 @@ const MoviesPage = () => {
             return setSearchParams({});
         }
 
-        setSearchParams({ query: newQuery }); // Правильний спосіб оновлення параметрів
+        setSearchParams({ query: newQuery });
         setMovie([]);
         setPage(1);
-        // searchParams.set('query', newQuery);
-        // setSearchParams(searchParams);
-        // setMovie([]);
-        // setPage(1);
     };
 
     const loadMoreMovies = () => {
