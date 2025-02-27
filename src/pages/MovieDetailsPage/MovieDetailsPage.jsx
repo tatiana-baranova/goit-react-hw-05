@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import s from './MovieDetailsPage.module.css';
 import { fetchMovieDetails } from '../../service/api';
 import GoBackBtn from '../../components/GoBackBtn/GoBackBtn';
-// import ErrorMessage from '../../components/ErrorMessage/ErrorMessage';
+import ErrorMessage from '../../components/ErrorMessage/ErrorMessage';
 import Loader from '../../components/Loader/Loader';
 import clsx from 'clsx';
 
@@ -16,11 +16,11 @@ const MovieDetailsPage = () => {
     const { movieId } = useParams();
     const [movie, setMovie] = useState(null);
     const [isLoading, setIsLoading] = useState(false);
-    // const [isError, setIsError] = useState(false);
+    const [isError, setIsError] = useState(false);
 
     useEffect(() => {
         const getData = async () => {
-            if (!movieId) return;
+            // if (!movieId) return;
             try {
                 setIsLoading(true);
                 const data = await fetchMovieDetails(movieId);
@@ -68,7 +68,7 @@ const MovieDetailsPage = () => {
                 </div>
                 </div>
             </div>
-                    {/* {isError && <ErrorMessage />} */}
+                    {isError && <ErrorMessage />}
             </div>
         <nav className={s.navMovie}>
                     <NavLink className={buildLinkClass} to='cast'>Cast</NavLink>
