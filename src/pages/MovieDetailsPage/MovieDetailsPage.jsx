@@ -43,7 +43,6 @@ const MovieDetailsPage = () => {
             <div className={s.container}>
                 <GoBackBtn />
                 {isLoading && <Loader/>}
-                {isError && <ErrorMessage />}
                 <div className={s.wrapper}>
                 <div className={s.wrap}>
                         <img src={urlImage} alt={movie.title} className={s.img}/>
@@ -69,6 +68,7 @@ const MovieDetailsPage = () => {
                 </div>
                 </div>
             </div>
+                    {isError && <ErrorMessage />}
             </div>
         <nav className={s.navMovie}>
                     <NavLink className={buildLinkClass} to='cast'>Cast</NavLink>
